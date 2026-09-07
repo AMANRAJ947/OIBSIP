@@ -1,5 +1,22 @@
-package Java-Task3-ATMInterface;
+import java.time.LocalDateTime;
 
 public class Transaction {
-    
+    private String type;
+    private double amount;
+    private String details;
+    private LocalDateTime dateTime;
+
+    public Transaction(String type, double amount, String details) {
+        this.type = type;
+        this.amount = amount;
+        this.details = details;
+        this.dateTime = LocalDateTime.now();
+    }
+
+    @Override
+    public String toString() {
+        return dateTime + " | " + type +
+               " | Amount: ₹" + amount +
+               " | " + details;
+    }
 }
